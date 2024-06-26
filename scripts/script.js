@@ -3,7 +3,7 @@ let popupClose = document.querySelector(".popup__close-button");
 let popup = document.querySelector(".popup");
 
 let nameTitle = document.querySelector(".profile__title");
-let aboutMe = document.querySelector(".profile__aboutMe");
+let aboutMe = document.querySelector(".profile__about");
 
 let nameInput = document.querySelector(".popup__input-name");
 let jobInput = document.querySelector(".popup__input-about");
