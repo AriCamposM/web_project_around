@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Ari Campos" />
-    <meta name="descript ion" content="Blog Of Traveling" />
+    <meta name="description" content="Blog Of Traveling" />
     <meta name="keywords" content="Blog,Travel,Adventures" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./pages/index.css" />
@@ -15,67 +15,74 @@
       <header class="header">
         <div class="header__container">
           <img
-            src="./images/header__logo-mobile.png"
-            alt="Around The U.S."
+            src="./images/header__logo.png"
+            alt="Logo"
             class="header__logo"
           />
         </div>
       </header>
 
       <section class="profile">
-        <div class="profile__photo">
-          <img
-            src="./images/profile__image.jpg"
-            alt="Profile image"
-            class="profile__image"
-          />
-        </div>
-
-        <div class="profile__info">
-          <div class="profile__info-container">
-            <h1 class="profile__name">Jacques Cousteau</h1>
-            <button class="profile__button">
-              <img
-                src="./images/Edit_Button.png"
-                alt=""
-                class="profile__edit"
-              />
-            </button>
+        <div class="profile__container">
+          <div class="profile__photo">
+            <img
+              class="profile__image"
+              src="./images/profile__image.jpg"
+              alt="Profile Pic"
+            />
           </div>
-          <h2 class="profile__aboutMe">Explorador</h2>
-          <button class="profile__add-button">+</button>
+          <div class="profile__info">
+            <div class="profile__name">
+              <h1 class="profile__title">Jacques Cousteau</h1>
+              <button class="profile__button-edit">
+                <img
+                  src="./images/Edit_Button.png"
+                  alt="Edit Button"
+                  class="profile__button-image"
+                />
+              </button>
+            </div>
+            <h2 class="profile__aboutMe">Explorador</h2>
+          </div>
+
+          <div class="profile__add">
+            <button class="profile__button-add">+</button>
+          </div>
         </div>
       </section>
 
-      <!-- <section class="popup">
-        <div class="popup__container">
-          <button class="popup__close-button">X</button>
-          <h3 class="popup__heading">Editar Perfil</h3>
-          <fieldset class="popup__forn">
-            <label for="name" class="popup__form-label"> </label>
+      <div class="popup">
+        <form action="" class="popup__form">
+          <div class="popup__container">
+            <img
+              class="popup__close-button"
+              src="/images/Close_Icon_White.png"
+              alt="Close Button"
+            />
+            <p class="popup__title">Editar perfil</p>
+            <label for="name" class="popup__label"></label>
             <input
               type="text"
-              class="popup__form-item popup__form-name"
+              class="popup__input-name"
               id="name"
-              name="name"
-              placeholder="Nombre"
               required
+              placeholder="Nombre"
             />
-            <div class="popup__line"></div>
-            <label for="aboutMe" class="popup__form-label"></label>
+
+            <label for="about" class="popup__label"></label>
             <input
               type="text"
-              class="popup__form-item popup__form-aboutMe"
-              id="aboutMe"
-              name="aboutMe"
-              placeholder="Acerca de mí"
+              name="about"
+              class="popup__input-about"
               required
+              placeholder="Acerca de mí"
             />
-            <div class="popup__line"></div>
-            <button type="submit" class="popup__form-button">Guardar</button>
-          </fieldset>
-        </div>
-      </section> -->
+            <button class="popup__button" type="submit" disabled>
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
 
       <section class="elements">
         <div class="element">
@@ -83,16 +90,16 @@
             <img
               src="./images/egipto__image.jpg"
               alt="Egipto"
-              class="element__photo"
+              class="element__image"
             />
           </div>
           <div class="element__footer">
-            <p class="element__name">Egipto</p>
-            <button class="element__button-like">
+            <p class="element__text">Egipto</p>
+            <button class="element__button">
               <img
                 src="./images/elements__heart.png"
-                alt=""
-                class="element__like"
+                alt="Like Button"
+                class="element__heart"
               />
             </button>
           </div>
@@ -103,16 +110,16 @@
             <img
               src="./images/madrid__image.jpg"
               alt="Madrid"
-              class="element__photo"
+              class="element__image"
             />
           </div>
           <div class="element__footer">
-            <p class="element__name">Madrid</p>
-            <button class="element__button-like">
+            <p class="element__text">Madrid</p>
+            <button class="element__button">
               <img
                 src="./images/elements__heart.png"
-                alt=""
-                class="element__like"
+                alt="Like Button"
+                class="element__heart"
               />
             </button>
           </div>
@@ -123,16 +130,16 @@
             <img
               src="./images/peru__image.jpg"
               alt="Peru"
-              class="element__photo"
+              class="element__image"
             />
           </div>
           <div class="element__footer">
-            <p class="element__name">Peru</p>
-            <button class="element__button-like">
+            <p class="element__text">Peru</p>
+            <button class="element__button">
               <img
                 src="./images/elements__heart.png"
-                alt="Peru"
-                class="element__like"
+                alt="Like Button"
+                class="element__heart"
               />
             </button>
           </div>
@@ -143,16 +150,16 @@
             <img
               src="./images/polonia__image.jpg"
               alt="Polonia"
-              class="element__photo"
+              class="element__image"
             />
           </div>
           <div class="element__footer">
-            <p class="element__name">Polonia</p>
-            <button class="element__button-like">
+            <p class="element__text">Polonia</p>
+            <button class="element__button">
               <img
                 src="./images/elements__heart.png"
-                alt=""
-                class="element__like"
+                alt="Like Button"
+                class="element__heart"
               />
             </button>
           </div>
@@ -162,17 +169,17 @@
           <div class="element__image-container">
             <img
               src="./images/suecia__image.jpg"
-              alt="Egipto"
-              class="element__photo"
+              alt="Suecia"
+              class="element__image"
             />
           </div>
           <div class="element__footer">
-            <p class="element__name">Suecia</p>
-            <button class="element__button-like">
+            <p class="element__text">Suecia</p>
+            <button class="element__button">
               <img
                 src="./images/elements__heart.png"
-                alt="Suecia"
-                class="element__like"
+                alt="Like Button"
+                class="element__heart"
               />
             </button>
           </div>
@@ -183,26 +190,25 @@
             <img
               src="./images/ucrania__image.jpg"
               alt="Ucrania"
-              class="element__photo"
+              class="element__image"
             />
           </div>
           <div class="element__footer">
-            <p class="element__name">Ucrania</p>
-            <button class="element__button-like">
+            <p class="element__text">Ucrania</p>
+            <button class="element__button">
               <img
                 src="./images/elements__heart.png"
-                alt=""
-                class="element__like"
+                alt="Like Button"
+                class="element__heart"
               />
             </button>
           </div>
         </div>
       </section>
-      <section class="footer">
-        <footer>
-          <p class="footer__copyright">&copy;2021 Around The U.S.</p>
-        </footer>
-      </section>
+      <footer class="footer">
+        <p class="footer__text">&#169;2021 Around The U.S.</p>
+      </footer>
     </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
