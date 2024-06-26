@@ -40,7 +40,8 @@ This project is designed to be a starting point for a travel blog, providing a b
 
 
 
-
+PAGE:
+https://aricamposm.github.io/web_project_around/
 
 
 
@@ -87,4 +88,6 @@ Este proyecto es un blog de viajes llamado **"Blog Of Travel"**. El sitio web es
 - **Imágenes**: Las imágenes utilizadas en este proyecto son de libre uso y se han obtenido de diversas fuentes.
 
 
+PAGINA: 
+https://aricamposm.github.io/web_project_around/
 
