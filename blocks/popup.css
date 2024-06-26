@@ -128,7 +128,7 @@
   .popup__close-button {
     position: absolute;
     top: -60px;
-    right: -0px;
+    right: 0;
   }
 
   .popup__title {
