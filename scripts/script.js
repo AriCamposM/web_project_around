@@ -160,6 +160,14 @@ function handleGalleryPostSubmit(evt) {
       viewerText.textContent = image.alt;
     });
   });
+
+  const likeButton = document.querySelectorAll(".element__button");
+
+  likeButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
+    });
+  });
 }
 
 formPost.addEventListener("submit", handleGalleryPostSubmit);
