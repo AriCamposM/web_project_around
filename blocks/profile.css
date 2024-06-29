@@ -22,12 +22,13 @@
 
 .profile__info {
   align-self: center;
-  margin-right: 130px;
+  /*Gracias por las correciones, intentare conforme avanze implementar las validaciones extras a mis proyectos!*/
+  width: 35vw;
 }
 
 .profile__name {
   display: flex;
-  max-width: 100%; /* Para que no se desbordfe */
+  max-width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -41,8 +42,8 @@
   line-height: 48px;
   margin: 0;
   margin-right: 18px;
-  /*Acá tenia solo el max width al 100%*/
-  max-width: 400px; /* Para que no se desborde*/
+
+  max-width: 400px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -69,8 +70,8 @@
   line-height: 22px;
   margin: 0px;
   margin-top: 16px;
-  /*Acá tenia solo el max width al 100%*/
-  max-width: 400px; /* Para que no se desborde*/
+
+  max-width: 400px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
