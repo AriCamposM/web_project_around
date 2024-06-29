@@ -1,4 +1,4 @@
-.popup {
+.post {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,11 +11,11 @@
   z-index: 2;
 }
 
-.popup_opened {
+.post_opened {
   display: flex;
 }
 
-.popup__form {
+.post__form {
   width: 430px;
   height: 330px;
   background-color: white;
@@ -27,18 +27,18 @@
   border-radius: 10px;
 }
 
-.popup__close-button {
+.post__close-button {
   position: absolute;
   top: -30px;
   right: -30px;
 }
 
-.popup__close-button:hover {
+.post__close-button:hover {
   opacity: 50%;
   cursor: pointer;
 }
 
-.popup__title {
+.post__title {
   font-family: "Inter";
   font-style: normal;
   font-weight: 900;
@@ -48,9 +48,10 @@
   text-align: left;
   margin-left: 80px;
   margin-bottom: 54px;
+  padding-top: 30px;
 }
 
-.popup__input-about {
+.post__input-link {
   width: 358px;
   height: 27px;
   margin: 10px auto;
@@ -68,7 +69,11 @@
   line-height: 17px;
 }
 
-.popup__input-name {
+.post__input-link::placeholder {
+  color: #c4c4c4;
+}
+
+.post__input-title {
   width: 358px;
   height: 27px;
   margin: 10px auto;
@@ -86,7 +91,11 @@
   line-height: 17px;
 }
 
-.popup__button {
+.post__input-title::placeholder {
+  color: #c4c4c4;
+}
+
+.post__button {
   width: 358px;
   height: 50px;
   margin: 20px auto;
@@ -104,41 +113,44 @@
   margin-bottom: 44px;
 }
 
-.popup__button:hover {
+.post__button:hover {
   opacity: 50%;
 }
 
-.popup__button:disabled {
+.post__button:disabled {
   background-color: #fff;
   color: #c4c4c4;
   border: 1px solid #c4c4c4;
 }
 
-.popup__container {
+.post__container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 @media screen and (max-width: 320px) {
-  .popup__form {
+  .post__form {
     width: 282px;
     height: 322px;
   }
 
-  .popup__close-button {
+  .post__close-button {
     position: absolute;
     top: -60px;
-    right: 0;
+    right: 15px;
+    width: 26px;
+    height: 26px;
   }
 
-  .popup__title {
+  .post__title {
     font-size: 18px;
     line-height: 22px;
     margin-left: 50px;
+    padding-top: 0px;
   }
 
-  .popup__input-about {
+  .post__input-link {
     width: 238px;
     height: 26px;
     margin: 10px auto;
@@ -149,7 +161,7 @@
     outline: none;
     border-bottom: 1px solid #c4c4c4;
   }
-  .popup__input-name {
+  .post__input-title {
     width: 238px;
     height: 26px;
     margin: 10px auto;
@@ -161,7 +173,7 @@
     border-bottom: 1px solid #c4c4c4;
   }
 
-  .popup__button {
+  .post__button {
     width: 238px;
     height: 46px;
     margin: 20px auto;

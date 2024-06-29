@@ -1,5 +1,18 @@
 .element {
   max-width: 282px;
+  position: relative;
+}
+
+.element__trash {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.element__trash:hover {
+  opacity: 50%;
+  cursor: pointer;
 }
 
 .element__image-container {
@@ -51,10 +64,18 @@
   padding: 0px;
   border: none;
   background-color: #fff;
+  background-size: cover;
 }
 
 .element__button:hover {
   opacity: 50%;
+  cursor: pointer;
+}
+
+.element__button.active {
+  background-image: url(../images/heart__black.png);
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .element__heart {

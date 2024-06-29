@@ -9,6 +9,8 @@ let nameInput = document.querySelector(".popup__input-name");
 let jobInput = document.querySelector(".popup__input-about");
 let submitButton = document.querySelector(".popup__button");
 
+let formElement = document.querySelector(".popup__form");
+
 function popupToggle() {
   popup.classList.toggle("popup_opened");
   nameInput.value = "";
@@ -16,7 +18,6 @@ function popupToggle() {
 }
 
 popupOpen.addEventListener("click", popupToggle);
-
 popupClose.addEventListener("click", popupToggle);
 
 function checkInput() {
@@ -30,38 +31,169 @@ function checkInput() {
 nameInput.addEventListener("input", checkInput);
 jobInput.addEventListener("input", checkInput);
 
-// Busquemos el formulario en el DOM
-let formElement = document.querySelector(".popup__form"); // Utiliza el método querySelector()
-
-// Lo siguiente es el manipulador (handler) de entrega de formularios, aunque
-// no se enviará en ningún sitio todavía
-
-// Observa que el nombre de la función comienza con un verbo
-// y describe exactamente lo que hace la función
 function handleProfileFormSubmit(evt) {
-  // Esta línea impide que el navegador
-  // entregue el formulario en su forma predeterminada.
   evt.preventDefault();
-  // Una vez hecho esto, podemos definir nuestra propia forma de entregar el formulario.
-  // Lo explicaremos todo con más detalle después.
 
-  // Busquemos los campos del formulario en el DOM
-  nameInput = document.querySelector(".popup__input-name"); // Utiliza el método querySelector()
-  jobInput = document.querySelector(".popup__input-about"); // Utiliza el método querySelector()
+  nameInput = document.querySelector(".popup__input-name");
+  jobInput = document.querySelector(".popup__input-about");
 
-  // Obtén los valores de cada campo desde la propiedad de valor correspondiente
   let newName = nameInput.value.trim();
   let newAboutMe = jobInput.value.trim();
-  // Selecciona los elementos donde se introducirán los valores de los campos
+
   popup.classList.toggle("popup_opened");
-  // Inserta nuevos valores utilizando el textContent
+
   nameTitle.textContent = newName;
   aboutMe.textContent = newAboutMe;
-  // propiedad del método querySelector()
+
   nameInput.value = "";
   jobInput.value = "";
+
+  submitButton.disabled = true;
 }
 
-// Conecta el manipulador (handler) al formulario:
-// se observará el evento de entrega
 formElement.addEventListener("submit", handleProfileFormSubmit);
+
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
+
+const cardGallery = document.querySelector(".elements");
+
+initialCards.forEach((card) => {
+  const cardTemplate = document.querySelector(".element__template").content;
+  const cardElement = cardTemplate.cloneNode(true);
+
+  cardElement.querySelector(".element__image").src = card.link;
+  cardElement.querySelector(".element__image").alt = card.name;
+  cardElement.querySelector(".element__text").textContent = card.name;
+
+  cardGallery.append(cardElement);
+});
+
+const post = document.querySelector(".post");
+const postOpen = document.querySelector(".profile__button-add");
+const postClose = document.querySelector(".post__close-button");
+const titleInput = document.querySelector(".post__input-title");
+const linkInput = document.querySelector(".post__input-link");
+const postButton = document.querySelector(".post__button");
+const formPost = document.querySelector(".post__form");
+
+function postToggle() {
+  post.classList.toggle("post_opened");
+  titleInput.value = "";
+  linkInput.value = "";
+}
+
+postOpen.addEventListener("click", postToggle);
+postClose.addEventListener("click", postToggle);
+
+function checkInputPost() {
+  if (titleInput.value.trim() !== "" && linkInput.value.trim() !== "") {
+    postButton.disabled = false;
+  } else {
+    postButton.disabled = true;
+  }
+}
+
+titleInput.addEventListener("input", checkInputPost);
+linkInput.addEventListener("input", checkInputPost);
+
+function handleGalleryPostSubmit(evt) {
+  evt.preventDefault();
+  const cardTemplate = document.querySelector(".element__template").content;
+  const cardElement = cardTemplate.cloneNode(true);
+
+  cardElement.querySelector(".element__image").src = linkInput.value.trim();
+  cardElement.querySelector(".element__image").alt = titleInput.value.trim();
+  cardElement.querySelector(".element__text").textContent =
+    titleInput.value.trim();
+
+  cardGallery.append(cardElement);
+
+  linkInput.value = "";
+  titleInput.value = "";
+
+  postButton.disabled = true;
+  post.classList.toggle("post_opened");
+
+  const deletuButtonCard = document.querySelectorAll(".element__trash");
+
+  deletuButtonCard.forEach((trash) => {
+    trash.addEventListener("click", () => {
+      trash.closest(".element").remove();
+    });
+  });
+
+  const viewer = document.querySelector(".viewer");
+  const viewerSource = document.querySelector(".viewer__image");
+  const viewerText = document.querySelector(".viewer__text");
+  const viewerClose = document.querySelector(".viewer__close");
+  const imageViewer = document.querySelectorAll(".element__image");
+
+  imageViewer.forEach((image) => {
+    image.addEventListener("click", () => {
+      viewer.classList.add("viewer_opened");
+      viewerSource.src = image.src;
+      viewerText.textContent = image.alt;
+    });
+  });
+}
+
+formPost.addEventListener("submit", handleGalleryPostSubmit);
+
+const likeButton = document.querySelectorAll(".element__button");
+
+likeButton.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+  });
+});
+
+const deletuButtonCard = document.querySelectorAll(".element__trash");
+
+deletuButtonCard.forEach((trash) => {
+  trash.addEventListener("click", () => {
+    trash.closest(".element").remove();
+  });
+});
+
+const viewer = document.querySelector(".viewer");
+const viewerSource = document.querySelector(".viewer__image");
+const viewerText = document.querySelector(".viewer__text");
+const viewerClose = document.querySelector(".viewer__close");
+const imageViewer = document.querySelectorAll(".element__image");
+
+imageViewer.forEach((image) => {
+  image.addEventListener("click", () => {
+    viewer.classList.add("viewer_opened");
+    viewerSource.src = image.src;
+    viewerText.textContent = image.alt;
+  });
+});
+
+viewerClose.addEventListener("click", () => {
+  viewer.classList.remove("viewer_opened");
+});

@@ -85,131 +85,74 @@
         </form>
       </div>
 
-      <section class="elements">
-        <div class="element">
-          <div class="element__image-container">
+      <div class="post">
+        <form class="post__form">
+          <div class="post__container">
             <img
-              src="./images/egipto__image.jpg"
-              alt="Egipto"
-              class="element__image"
+              class="post__close-button"
+              src="./images/Close__Icon.png"
+              alt="Close Button"
             />
-          </div>
-          <div class="element__footer">
-            <h3 class="element__text">Egipto</h3>
-            <button class="element__button">
-              <img
-                src="./images/elements__heart.png"
-                alt="Like Button"
-                class="element__heart"
-              />
-            </button>
-          </div>
-        </div>
+            <p class="post__title">Nuevo lugar</p>
+            <label for="title" class="post__label"></label>
+            <input
+              type="text"
+              class="post__input-title"
+              id="title"
+              required
+              placeholder="Titulo"
+            />
 
-        <div class="element">
-          <div class="element__image-container">
-            <img
-              src="./images/madrid__image.jpg"
-              alt="Madrid"
-              class="element__image"
+            <label for="link" class="post__label"></label>
+            <input
+              type="text"
+              name="link"
+              id="link"
+              class="post__input-link"
+              required
+              placeholder="Enlace a la imagen"
             />
+            <button class="post__button" type="submit" disabled>Crear</button>
           </div>
-          <div class="element__footer">
-            <p class="element__text">Madrid</p>
-            <button class="element__button">
-              <img
-                src="./images/elements__heart.png"
-                alt="Like Button"
-                class="element__heart"
-              />
-            </button>
-          </div>
-        </div>
+        </form>
+      </div>
 
-        <div class="element">
-          <div class="element__image-container">
-            <img
-              src="./images/peru__image.jpg"
-              alt="Peru"
-              class="element__image"
-            />
-          </div>
-          <div class="element__footer">
-            <p class="element__text">Peru</p>
-            <button class="element__button">
-              <img
-                src="./images/elements__heart.png"
-                alt="Like Button"
-                class="element__heart"
-              />
-            </button>
-          </div>
+      <div class="viewer">
+        <div class="viewer__container">
+          <img src="./images/Close__Icon.png" alt="" class="viewer__close" />
+          <img src="" alt="" class="viewer__image" />
+          <p class="viewer__text"></p>
         </div>
+      </div>
 
-        <div class="element">
-          <div class="element__image-container">
-            <img
-              src="./images/polonia__image.jpg"
-              alt="Polonia"
-              class="element__image"
-            />
-          </div>
-          <div class="element__footer">
-            <p class="element__text">Polonia</p>
-            <button class="element__button">
-              <img
-                src="./images/elements__heart.png"
-                alt="Like Button"
-                class="element__heart"
-              />
-            </button>
-          </div>
-        </div>
+      <section class="elements"></section>
 
-        <div class="element">
-          <div class="element__image-container">
-            <img
-              src="./images/suecia__image.jpg"
-              alt="Suecia"
-              class="element__image"
-            />
-          </div>
-          <div class="element__footer">
-            <p class="element__text">Suecia</p>
-            <button class="element__button">
-              <img
-                src="./images/elements__heart.png"
-                alt="Like Button"
-                class="element__heart"
-              />
-            </button>
-          </div>
-        </div>
-
-        <div class="element">
-          <div class="element__image-container">
-            <img
-              src="./images/ucrania__image.jpg"
-              alt="Ucrania"
-              class="element__image"
-            />
-          </div>
-          <div class="element__footer">
-            <p class="element__text">Ucrania</p>
-            <button class="element__button">
-              <img
-                src="./images/elements__heart.png"
-                alt="Like Button"
-                class="element__heart"
-              />
-            </button>
-          </div>
-        </div>
-      </section>
       <footer class="footer">
         <p class="footer__text">&#169;2021 Around The U.S.</p>
       </footer>
     </div>
+    <template class="element__template">
+      <div class="element">
+        <img
+          src="./images/element__trash.png"
+          alt="Delete Button"
+          class="element__trash"
+        />
+        <div class="element__image-container">
+          <img src="" alt="" class="element__image" />
+        </div>
+        <div class="element__footer">
+          <p class="element__text"></p>
+          <button class="element__button">
+            <img
+              src="./images/elements__heart.png"
+              alt="Like Button"
+              class="element__heart"
+            />
+          </button>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
