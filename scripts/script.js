@@ -211,10 +211,6 @@ viewerClose.addEventListener("click", () => {
 popup.addEventListener("click", function (event) {
   if (event.target === popup) {
     popupToggle();
-<<<<<<< HEAD
-    resetValidation(configPopup);
-=======
->>>>>>> 192a38c1c70b9ac5e6528d7df18fca706bf6e650
   }
 });
 
