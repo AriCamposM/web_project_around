@@ -9,7 +9,7 @@ const nameInput = document.querySelector(".popup__input-name");
 const jobInput = document.querySelector(".popup__input-about");
 const submitButton = document.querySelector(".popup__button");
 
-const formElement = document.querySelector(".popup__form");
+const popupFormElement = document.querySelector(".popup__form");
 
 function popupToggle() {
   popup.classList.toggle("popup_opened");
@@ -20,16 +20,16 @@ function popupToggle() {
 popupOpen.addEventListener("click", popupToggle);
 popupClose.addEventListener("click", popupToggle);
 
-function checkInput() {
-  if (nameInput.value.trim() !== "" && jobInput.value.trim() !== "") {
-    submitButton.disabled = false;
-  } else {
-    submitButton.disabled = true;
-  }
-}
+// function checkInput() {
+//   // if (nameInput.value.trim() !== "" && jobInput.value.trim() !== "") {
+//   //   submitButton.disabled = false;
+//   // } else {
+//   //   submitButton.disabled = true;
+//   // }
+// }
 
-nameInput.addEventListener("input", checkInput);
-jobInput.addEventListener("input", checkInput);
+// nameInput.addEventListener("input", checkInput);
+// jobInput.addEventListener("input", checkInput);
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -48,7 +48,7 @@ function handleProfileFormSubmit(evt) {
   submitButton.disabled = true;
 }
 
-formElement.addEventListener("submit", handleProfileFormSubmit);
+popupFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 const initialCards = [
   {
@@ -107,16 +107,16 @@ function postToggle() {
 postOpen.addEventListener("click", postToggle);
 postClose.addEventListener("click", postToggle);
 
-function checkInputPost() {
-  if (titleInput.value.trim() !== "" && linkInput.value.trim() !== "") {
-    postButton.disabled = false;
-  } else {
-    postButton.disabled = true;
-  }
-}
+// function checkInputPost() {
+//   if (titleInput.value.trim() !== "" && linkInput.value.trim() !== "") {
+//     postButton.disabled = false;
+//   } else {
+//     postButton.disabled = true;
+//   }
+// }
 
-titleInput.addEventListener("input", checkInputPost);
-linkInput.addEventListener("input", checkInputPost);
+// titleInput.addEventListener("input", checkInputPost);
+// linkInput.addEventListener("input", checkInputPost);
 
 function handleGalleryPostSubmit(evt) {
   evt.preventDefault();
@@ -201,4 +201,39 @@ imageViewer.forEach((image) => {
 
 viewerClose.addEventListener("click", () => {
   viewer.classList.remove("viewer_opened");
+});
+
+//Seccion click fuera del form y ESC para cerrar ventana
+popup.addEventListener("click", function (event) {
+  if (event.target === popup) {
+    popupToggle();
+  }
+});
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    if (popup.classList.contains("popup_opened")) {
+      popupToggle();
+    }
+
+    if (post.classList.contains("post_opened")) {
+      postToggle();
+    }
+
+    if (viewer.classList.contains("viewer_opened")) {
+      viewer.classList.remove("viewer_opened");
+    }
+  }
+});
+
+post.addEventListener("click", function (evt) {
+  if (evt.target === post) {
+    postToggle();
+  }
+});
+
+viewer.addEventListener("click", function (evt) {
+  if (evt.target === viewer) {
+    viewer.classList.remove("viewer_opened");
+  }
 });
