@@ -85,6 +85,7 @@ const configPost = {
 };
 
 enableValidation(configPost);
+<<<<<<< HEAD
 
 const resetValidation = (config) => {
   const formElement = document.querySelector(config.formSelector);
@@ -101,3 +102,5 @@ const resetValidation = (config) => {
 };
 
 export { configPopup, configPost, resetValidation };
+=======
+>>>>>>> 192a38c1c70b9ac5e6528d7df18fca706bf6e650

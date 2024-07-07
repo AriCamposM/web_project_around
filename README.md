@@ -22,8 +22,10 @@ This project is a travel blog called **"Blog Of Travel"**. The website is design
 
 ### JavaScript
 - **DOM Interaction**: Use of `document.querySelector` and `document.querySelectorAll` to select and manipulate DOM elements.
-- **Events**: Adding event handlers for actions such as button clicks and form submissions.
+- **Events**: Adding event handlers for actions such as button clicks, form submissions, and keydown events.
 - **Form Validation**: Checking form inputs to enable or disable the submit button.
+- **Arrays and Objects**: Utilization of arrays and objects to manage data and functionality.
+- **Array Functions**: Implementation of array methods like `forEach`, `map`, and `filter` to handle data efficiently.
 
 ### Use of Query Selectors
 - **Element Selection**: Methods `querySelector` and `querySelectorAll` are used to select specific elements from the DOM.
@@ -37,20 +39,11 @@ This project is a travel blog called **"Blog Of Travel"**. The website is design
 
 This project is designed to be a starting point for a travel blog, providing a basic structure and styles that can be expanded and customized according to the user's needs.
 
+**Page**: [Blog of Travel](https://aricamposm.github.io/web_project_around/)
 
+---
 
-
-PAGE:
-https://aricamposm.github.io/web_project_around/
-
-
-
-
-
-# Tripleten web_project_around
-
-Blog of Travel - README
-Descria# Blog of Travel - README
+# Blog of Travel - README
 
 ## Descripción
 Este proyecto es un blog de viajes llamado **"Blog Of Travel"**. El sitio web está diseñado para compartir experiencias de viaje y aventuras. La página principal muestra un perfil, secciones de elementos de viaje y un pie de página. Además, cuenta con un formulario emergente para editar el perfil del usuario.
@@ -74,8 +67,10 @@ Este proyecto es un blog de viajes llamado **"Blog Of Travel"**. El sitio web es
 
 ### JavaScript
 - **Interacción con el DOM**: Uso de `document.querySelector` y `document.querySelectorAll` para seleccionar elementos del DOM y manipularlos.
-- **Eventos**: Adición de manejadores de eventos para acciones como hacer clic en botones y enviar formularios.
+- **Eventos**: Adición de manejadores de eventos para acciones como hacer clic en botones, enviar formularios, y eventos de keydown.
 - **Validación de Formularios**: Comprobación de entradas de formularios para habilitar o deshabilitar el botón de enviar.
+- **Arreglos y Objetos**: Utilización de arreglos y objetos para gestionar datos y funcionalidades.
+- **Funciones de Arrays**: Implementación de métodos de arrays como `forEach`, `map`, y `filter` para manejar datos de manera eficiente.
 
 ### Uso de Query Selectors
 - **Selección de Elementos**: Se utilizan los métodos `querySelector` y `querySelectorAll` para seleccionar elementos específicos del DOM.
@@ -87,7 +82,4 @@ Este proyecto es un blog de viajes llamado **"Blog Of Travel"**. El sitio web es
 ## Créditos
 - **Imágenes**: Las imágenes utilizadas en este proyecto son de libre uso y se han obtenido de diversas fuentes.
 
-
-PAGINA: 
-https://aricamposm.github.io/web_project_around/
-
+**Página**: [Blog of Travel](https://aricamposm.github.io/web_project_around/)
