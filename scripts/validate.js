@@ -1,5 +1,3 @@
-// Validacion de formulario
-
 const showInputError = (input, config) => {
   const errorElement = document.querySelector(`.${input.id}-error`);
   input.classList.add(config.inputErrorClass);
