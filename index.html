@@ -52,7 +52,7 @@
       </section>
 
       <div class="popup">
-        <form class="popup__form">
+        <form class="popup__form" novalidate>
           <div class="popup__container">
             <img
               class="popup__close-button"
@@ -60,27 +60,36 @@
               alt="Close Button"
             />
             <p class="popup__title">Editar perfil</p>
-            <label for="name" class="popup__label"></label>
+            <label for="input-name" class="popup__label"></label>
             <input
               type="text"
-              class="popup__input-name"
-              id="name"
+              class="popup__input-name popup__input"
+              id="input-name"
               required
               placeholder="Nombre"
+              minlength="2"
+              maxlength="40"
             />
-
-            <label for="about" class="popup__label"></label>
+            <span
+              class="popup__error input-name-error"
+              id="input-name-error"
+            ></span>
+            <label for="input-about" class="popup__label"></label>
             <input
               type="text"
               name="about"
-              id="about"
-              class="popup__input-about"
+              id="input-about"
+              class="popup__input-about popup__input"
               required
               placeholder="Acerca de mí"
+              minlength="2"
+              maxlength="200"
             />
-            <button class="popup__button" type="submit" disabled>
-              Guardar
-            </button>
+            <span
+              class="popup__error input-about-error"
+              id="input-about-error"
+            ></span>
+            <button class="popup__button" type="submit">Guardar</button>
           </div>
         </form>
       </div>
@@ -94,25 +103,35 @@
               alt="Close Button"
             />
             <p class="post__title">Nuevo lugar</p>
-            <label for="title" class="post__label"></label>
+            <label for="input-title" class="post__label"></label>
             <input
               type="text"
-              class="post__input-title"
-              id="title"
+              class="post__input-title post__input"
+              id="input-title"
+              name="title"
               required
               placeholder="Titulo"
+              minlength="2"
+              maxlength="30"
             />
-
-            <label for="link" class="post__label"></label>
+            <span
+              class="post__error input-title-error"
+              id="input-title-error"
+            ></span>
+            <label for="input-link" class="post__label"></label>
             <input
-              type="text"
+              type="url"
               name="link"
-              id="link"
-              class="post__input-link"
+              id="input-link"
+              class="post__input-link post__input"
               required
               placeholder="Enlace a la imagen"
             />
-            <button class="post__button" type="submit" disabled>Crear</button>
+            <span
+              class="post__error input-link-error"
+              id="input-link-error"
+            ></span>
+            <button class="post__button" type="submit">Crear</button>
           </div>
         </form>
       </div>
@@ -153,6 +172,7 @@
         </div>
       </div>
     </template>
-    <script src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/script.js"></script>
   </body>
 </html>
