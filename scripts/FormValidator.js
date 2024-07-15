@@ -75,23 +75,4 @@ const initializeValidation = (config) => {
   });
 };
 
-const configPopup = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-};
-
-const configPost = {
-  formSelector: ".post__form",
-  inputSelector: ".post__input",
-  submitButtonSelector: ".post__button",
-  inactiveButtonClass: "post__button_disabled",
-  inputErrorClass: "post__input_type_error",
-  errorClass: "post__error_visible",
-};
-
-initializeValidation(configPopup);
-initializeValidation(configPost);
+export { FormValidator };
