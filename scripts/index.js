@@ -88,7 +88,7 @@ function handleGalleryPostSubmit(evt) {
     linkInput.value.trim(),
     templateSelector
   );
-  cardGallery.append(newCard.getCardElement());
+  cardGallery.prepend(newCard.getCardElement());
 
   titleInput.value = "";
   linkInput.value = "";
