@@ -1,8 +1,9 @@
 class Card {
-  constructor(text, imageLink, templateSelector) {
+  constructor(text, imageLink, templateSelector, handleCardClick) {
     this._text = text;
     this._imageLink = imageLink;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
     this._element = this._getTemplate();
     this._setEventListeners();
   }
@@ -26,7 +27,7 @@ class Card {
     this._element
       .querySelector(".element__image")
       .addEventListener("click", () => {
-        this._handleImageClick();
+        this._handleCardClick(this._imageLink, this._text);
       });
   }
 
@@ -36,16 +37,6 @@ class Card {
 
   _handleDeleteButton() {
     this._element.remove();
-  }
-
-  _handleImageClick() {
-    const viewer = document.querySelector(".viewer");
-    const viewerSource = document.querySelector(".viewer__image");
-    const viewerText = document.querySelector(".viewer__text");
-
-    viewer.classList.add("viewer_opened");
-    viewerSource.src = this._imageLink;
-    viewerText.textContent = this._text;
   }
 
   _handleLikeButton() {

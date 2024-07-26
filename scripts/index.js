@@ -1,53 +1,49 @@
 import Card from "./card.js";
+import Section from "./section.js";
+import PopupWithImage from "./popupWithImage.js";
+import PopupWithForm from "./popupWithForm.js";
 import { FormValidator } from "./FormValidator.js";
-import {
-  popupOpen,
-  popupClose,
-  popup,
-  nameTitle,
-  aboutMe,
-  nameInput,
-  jobInput,
-  submitButton,
-  popupFormElement,
-  popupToggle,
-  popupEventListeners,
-  cardGallery,
-  post,
-  postOpen,
-  postClose,
-  titleInput,
-  linkInput,
-  postButton,
-  formPost,
-  postToggle,
-  postEventListeners,
-  viewer,
-  viewerSource,
-  viewerText,
-  viewerClose,
-  imageViewer,
-} from "./utils.js";
-popupEventListeners();
+import { profileEditButton, profileAddButton, cardGallery } from "./utils.js";
+import UserInfo from "./userInfo.js";
+//Función para crear tarjetas con propiedades de objeto
+const createCard = (item) => {
+  const card = new Card(
+    item.name,
+    item.link,
+    ".element__template",
+    (link, name) => {
+      popupWithImage.open(link, name);
+    }
+  );
+  return card;
+};
 
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
+const popupCard = new PopupWithForm("#popup-cards", (inputs) => {
+  console.log(inputs);
+  const newItem = {
+    name: inputs.name,
+    link: inputs.link,
+  };
+  const newCard = createCard(newItem);
 
-  const newName = nameInput.value.trim();
-  const newAboutMe = jobInput.value.trim();
+  cardGallery.prepend(newCard.getCardElement());
+  popupCard.close();
+});
 
-  popup.classList.toggle("popup_opened");
+popupCard.setEventListeners();
 
-  nameTitle.textContent = newName;
-  aboutMe.textContent = newAboutMe;
+const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
+  console.log(inputs);
 
-  nameInput.value = "";
-  jobInput.value = "";
+  const userProfile = new UserInfo({
+    name: document.querySelector(".profile__title"),
+    about: document.querySelector(".profile__about"),
+  });
 
-  submitButton.disabled = true;
-}
-
-popupFormElement.addEventListener("submit", handleProfileFormSubmit);
+  userProfile.setUserInfo({ name: inputs.name, about: inputs.about });
+  popupProfile.close();
+});
+popupProfile.setEventListeners();
 
 const initialCards = [
   {
@@ -76,54 +72,18 @@ const initialCards = [
   },
 ];
 
-postEventListeners();
+// initialCards.forEach((card) => {
+//   const newCard = new Card(card.name, card.link, ".element__template");
+//   cardGallery.append(newCard.getCardElement());
+// });
 
-function handleGalleryPostSubmit(evt) {
-  evt.preventDefault();
-
-  const templateSelector = ".element__template";
-
-  const newCard = new Card(
-    titleInput.value.trim(),
-    linkInput.value.trim(),
-    templateSelector
-  );
-  cardGallery.prepend(newCard.getCardElement());
-
-  titleInput.value = "";
-  linkInput.value = "";
-
-  postButton.disabled = true;
-  post.classList.toggle("post_opened");
-
-  const viewer = document.querySelector(".viewer");
-  const viewerSource = document.querySelector(".viewer__image");
-  const viewerText = document.querySelector(".viewer__text");
-  const imageViewer = document.querySelectorAll(".element__image");
-
-  imageViewer.forEach((image) => {
-    image.addEventListener("click", () => {
-      viewer.classList.add("viewer_opened");
-      viewerSource.src = image.src;
-      viewerText.textContent = image.alt;
-    });
-  });
-}
-
-formPost.addEventListener("submit", handleGalleryPostSubmit);
-
-initialCards.forEach((card) => {
-  const newCard = new Card(card.name, card.link, ".element__template");
-  cardGallery.append(newCard.getCardElement());
-});
-
-imageViewer.forEach((image) => {
-  image.addEventListener("click", () => {
-    viewer.classList.add("viewer_opened");
-    viewerSource.src = image.src;
-    viewerText.textContent = image.alt;
-  });
-});
+// imageViewer.forEach((image) => {
+//   image.addEventListener("click", () => {
+//     viewer.classList.add("viewer_opened");
+//     viewerSource.src = image.src;
+//     viewerText.textContent = image.alt;
+//   });
+// });
 
 const configPopup = {
   formSelector: ".popup__form",
@@ -133,6 +93,15 @@ const configPopup = {
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
 };
+
+// const configPopupCard = {
+//   formSelector: "#popup-cards",
+//   inputSelector: ".popup__input",
+//   submitButtonSelector: "#popup__button-cards",
+//   inactiveButtonClass: "popup__button_disabled",
+//   inputErrorClass: "popup__input_type_error",
+//   errorClass: "popup__error_visible",
+// };
 
 const configPost = {
   formSelector: ".post__form",
@@ -153,3 +122,29 @@ const initializeValidation = (config) => {
 
 initializeValidation(configPopup);
 initializeValidation(configPost);
+// initializeValidation(configPopupCard);
+
+const section = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const newCard = createCard(item);
+      section.addItem(newCard.getCardElement());
+    },
+  },
+  ".elements"
+);
+
+// llamo al metodo renderItems para que renderize los elementos
+section.renderItems();
+
+profileAddButton.addEventListener("click", () => {
+  popupCard.open();
+});
+
+profileEditButton.addEventListener("click", () => {
+  popupProfile.open();
+});
+
+const popupWithImage = new PopupWithImage(".viewer");
+popupWithImage.setEventListeners();
