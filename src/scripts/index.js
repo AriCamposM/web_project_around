@@ -5,6 +5,9 @@ import PopupWithForm from "./popupWithForm.js";
 import { FormValidator } from "./FormValidator.js";
 import { profileEditButton, profileAddButton, cardGallery } from "./utils.js";
 import UserInfo from "./userInfo.js";
+//Webpack importacion de CSS
+import "../pages/index.css"
+
 //Función para crear tarjetas con propiedades de objeto
 const createCard = (item) => {
   const card = new Card(
@@ -72,18 +75,6 @@ const initialCards = [
   },
 ];
 
-// initialCards.forEach((card) => {
-//   const newCard = new Card(card.name, card.link, ".element__template");
-//   cardGallery.append(newCard.getCardElement());
-// });
-
-// imageViewer.forEach((image) => {
-//   image.addEventListener("click", () => {
-//     viewer.classList.add("viewer_opened");
-//     viewerSource.src = image.src;
-//     viewerText.textContent = image.alt;
-//   });
-// });
 
 const configPopup = {
   formSelector: ".popup__form",
@@ -93,15 +84,6 @@ const configPopup = {
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
 };
-
-// const configPopupCard = {
-//   formSelector: "#popup-cards",
-//   inputSelector: ".popup__input",
-//   submitButtonSelector: "#popup__button-cards",
-//   inactiveButtonClass: "popup__button_disabled",
-//   inputErrorClass: "popup__input_type_error",
-//   errorClass: "popup__error_visible",
-// };
 
 const configPost = {
   formSelector: ".post__form",
@@ -122,7 +104,7 @@ const initializeValidation = (config) => {
 
 initializeValidation(configPopup);
 initializeValidation(configPost);
-// initializeValidation(configPopupCard);
+
 
 const section = new Section(
   {
