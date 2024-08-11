@@ -157,6 +157,17 @@
   text-align: left;
 }
 
+.input-avatar-error {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  max-width: 358px;
+  text-align: left;
+}
+
 @media screen and (max-width: 320px) {
   .popup__form {
     width: 282px;

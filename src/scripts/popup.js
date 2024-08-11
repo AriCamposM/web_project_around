@@ -8,12 +8,14 @@ export default class Popup {
   open() {
     this._popup.classList.add("popup_opened");
     this._popup.classList.add("viewer_opened");
+    this._popup.classList.add("confirm_opened");
     document.addEventListener("keydown", this._handleEscClose);
   }
 
   close() {
     this._popup.classList.remove("popup_opened");
     this._popup.classList.remove("viewer_opened");
+    this._popup.classList.remove("confirm_opened");
     document.removeEventListener("keydown", this._handleEscClose);
   }
 

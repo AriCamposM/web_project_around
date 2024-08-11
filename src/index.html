@@ -24,11 +24,14 @@
       <section class="profile">
         <div class="profile__container">
           <div class="profile__photo">
+
             <img
               class="profile__image"
               src="<%= require('./images/profile__image.jpg')%>"
               alt="Profile Pic"
             />
+            <img class="profile__edit-icon"
+          src="<%= require('./images/edit__profile-icon.png')%>" alt="Edit Icon">
           </div>
           <div class="profile__info">
             <div class="profile__name">
@@ -89,7 +92,7 @@
               class="popup__error input-about-error"
               id="input-about-error"
             ></span>
-            <button class="popup__button" type="submit">Guardar</button>
+            <button class="popup__button" id="popup__button-profile" type="submit">Guardar</button>
           </div>
         </form>
       </div>
@@ -136,6 +139,59 @@
               id="popup__button-cards"
               type="submit"
             >
+              Crear
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="confirm"   id="popup-confirmation">
+        <form class="confirm__form" novalidate>
+          <div class="confirm__container">
+            <img
+              class="confirm__close-button"
+              src="<%= require('./images/Close__Icon.png')%>"
+              alt="Close Button"
+            />
+            <p class="confirm__title">¿Estás seguro/a?</p>
+            <button
+              class="confirm__button"
+              id="confirm__button-delete"
+              type="submit"
+            >
+              Si
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="popup" id="popup-avatar">
+        <form class="popup__form" novalidate>
+          <div class="popup__container">
+            <img
+              class="popup__close-button"
+              src="<%= require('./images/Close__Icon.png')%>"
+              alt="Close Button"
+            />
+            <p class="popup__title">Cambiar Foto De Perfil</p>
+            <label for="input-avatar" class="popup__label"></label>
+            <input
+              type="url"
+              name="avatar"
+              id="input-avatar"
+              class="popup__input-about popup__input"
+              required
+              placeholder="Enlace a la imagen"
+            />
+            <span
+              class="popup__error input-avatar-error"
+              id="input-avatar-error"
+            ></span>
+            <button
+              class="popup__button"
+              id="popup__button-avatar"
+              type="submit"
+            >
               Guardar
             </button>
           </div>
@@ -177,6 +233,7 @@
               alt="Like Button"
               class="element__heart"
             />
+            <span class="element__likes-count"></span>
           </button>
         </div>
       </div>
