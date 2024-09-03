@@ -49,7 +49,7 @@ This project is a travel blog called **"Blog Of Travel"**. The website is design
 
 This project is designed to be a starting point for a travel blog, providing a basic structure and styles that can be expanded and customized according to the user's needs.
 
-**Page**: [Blog of Travel](https://aricamposm.github.io/web_project_around/)
+**Page**: [Blog of Travel](https://web-project-around-r25y.vercel.app)
 
 ---
 
@@ -104,4 +104,4 @@ Este proyecto es un blog de viajes llamado **"Blog Of Travel"**. El sitio web es
 
 Este proyecto está diseñado para ser un punto de partida para un blog de viajes, proporcionando una estructura básica y estilos que pueden ser ampliados y personalizados según las necesidades del usuario.
 
-**Página**: [Blog of Travel](https://aricamposm.github.io/web_project_around/)
+**Página**: [Blog of Travel](https://web-project-around-r25y.vercel.app)
